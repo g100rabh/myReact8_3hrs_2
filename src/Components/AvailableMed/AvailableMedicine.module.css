@@ -1,0 +1,14 @@
+.med {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.med span {
+    padding: 10%;
+}
+
+.form {
+    display: flex;
+    padding-right: 50%;
+}
