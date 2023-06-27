@@ -12,7 +12,7 @@ const Cart = (props) => {
 
     let total = 0
     cartCtx.items.forEach((element) => {
-        total += Number(element.Price) * Number(element.quantity);
+        total += element.price;
       });
 
   return (

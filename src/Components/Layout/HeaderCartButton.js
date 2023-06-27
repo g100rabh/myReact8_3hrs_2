@@ -6,7 +6,7 @@ import CartContext from "../../store/cart-context";
 
 const HeaderCartButton = (props) => {
 
-    const cartCtx = useContext(CartContext).items;
+    const cartCtx = useContext(CartContext);
 
     let q = 0;
     cartCtx.items.forEach((element) => {

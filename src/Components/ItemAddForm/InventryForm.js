@@ -13,7 +13,7 @@ const InventryForm = (props) => {
     const medName = document.getElementById('medName').value;
     const medDes = document.getElementById('medDes').value;
     const medPrice = document.getElementById('medPrice').value;
-    availableCtx.addItem({ID: medId, Name: medName, price: medPrice, Des: medDes})
+    availableCtx.addItem({ID: medId, Name: medName, price: Number(medPrice), Des: medDes})
   } 
 
 

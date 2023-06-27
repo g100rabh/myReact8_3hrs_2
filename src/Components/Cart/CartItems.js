@@ -8,7 +8,7 @@ const CartItems = () => {
   const deleteHandler = (event) => {
     const ele = event.target.parentElement.parentElement;
     // console.log(ele.id)
-    cartCtx.removeItem(ele.id);
+    cartCtx.removeCartItem(ele.id);
   };
 
   const increaseHandler = (event) => {
@@ -18,11 +18,6 @@ const CartItems = () => {
   const reduceHandler = (event) => {
     const ele = event.target.parentElement.parentElement;
     cartCtx.quantityChange(ele, -1);
-  };
-
-  const quantityChangehandler = (event) => {
-    const ele = event.target.parentElement.parentElement;
-    cartCtx.quantityChange(ele, event.target.value);
   };
 
   return (
@@ -35,8 +30,9 @@ const CartItems = () => {
             <span>{med.Name}</span>
             <span>{med.Des}</span>
             <span>{med.price}</span>
+            <span>x{med.quantity}</span>
           </div>
-
+        
           <div className={classes.input}>
             <button className={classes.reduce} onClick={reduceHandler}>
               -

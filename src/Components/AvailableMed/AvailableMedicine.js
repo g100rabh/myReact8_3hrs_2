@@ -13,11 +13,19 @@ const AvailableMedicine = (props) => {
     const clickHandler = (event) => {
         event.preventDefault();
         const eleId = event.target.parentElement.id;
-        const eleForCart = medCtx.filter((element) => element.ID == eleId)[0];
+        const eleForCart = medCtx.filter((element) => element.ID === eleId)[0];
         // console.log(eleForCart);
         const quantity = document.getElementById('quantity').value;
         // console.log(quantity)
-        cartCtx.addItem({...eleForCart, quantity: Number(quantity)});
+        const index = cartCtx.items.findIndex(element => element.ID === eleId)
+        console.log(eleForCart.ID, index)
+        if(index !== -1){
+            console.log(eleForCart.ID)
+            cartCtx.quantityChange(eleForCart, quantity, `${index}`);
+        } else {
+            cartCtx.addItem({...eleForCart, quantity: Number(quantity)});
+        }
+        
     }
 
   const medList = medCtx.map((med) => (
